@@ -19,7 +19,7 @@ namespace CarstenFuehrmann.Monads
         }
 
         public static TResult? SelectMany<TSource, TOther, TResult>(
-            this TSource? source, Func<TSource, TOther?> monadFunction, 
+            this TSource? source, Func<TSource, TOther?> monadFunction,
             Func<TSource, TOther, TResult> resultFunction)
             where TSource : struct
             where TOther : struct
@@ -36,9 +36,9 @@ namespace CarstenFuehrmann.Monads
             where TResult : struct
             where TSource : struct
         {
-            return 
-                source.Bind(sourceValue => 
-                    function(sourceValue).Just());
+            return
+                source.Bind(sourceValue =>
+                function(sourceValue).Just());
         }
     }
 }

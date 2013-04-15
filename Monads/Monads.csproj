@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="ComputationMethods.cs" />
     <Compile Include="Computation.cs" />
+    <Compile Include="Maybe.cs" />
     <Compile Include="NullableMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

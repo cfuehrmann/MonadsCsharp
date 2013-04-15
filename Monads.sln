@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2012 for Web
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLanguageTests", "MyLanguageTests\MyLanguageTests.csproj", "{D4050C72-CEF6-4C8D-AE23-A215AE68B656}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonadTests", "MonadTests\MonadTests.csproj", "{D1663F69-760D-41FD-A136-0EDAA9EEB05D}"

@@ -1,6 +1,5 @@
 ﻿using CarstenFuehrmann.Monads;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Linq;
 
 namespace CarstenFuehrmann.MonadTests
 {
@@ -68,7 +67,9 @@ namespace CarstenFuehrmann.MonadTests
         public void SelectValue()
         {
             var actual =
+// ReSharper disable RedundantExplicitNullableCreation
                 from x in new int?(42)
+// ReSharper restore RedundantExplicitNullableCreation
                 select x;
 
             var expected = new int?(42);
@@ -89,7 +90,9 @@ namespace CarstenFuehrmann.MonadTests
         public void FromBothHaveValue()
         {
             var actual =
+// ReSharper disable RedundantExplicitNullableCreation
                 from x in new int?(42)
+// ReSharper restore RedundantExplicitNullableCreation
                 from y in new double?(x * 1.5)
                 select x + y;
 

@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Linq;
 
 namespace CarstenFuehrmann.Monads
 {
     public static class ComputationMethods
     {
         public static Computation<TResult> Bind<TSource, TResult>(
-            this Computation<TSource> source, 
+            this Computation<TSource> source,
             Func<TSource, Computation<TResult>> function)
         {
             Func<TResult> code = () =>
@@ -24,7 +23,7 @@ namespace CarstenFuehrmann.Monads
         }
 
         public static Computation<TResult> Select<TSource, TResult>(
-            this Computation<TSource> source, 
+            this Computation<TSource> source,
             Func<TSource, TResult> function)
             where TResult : struct
             where TSource : struct
@@ -49,11 +48,11 @@ namespace CarstenFuehrmann.Monads
         }
 
         // The "big" version of SelectMany above avoids building up brackets:
-        public static Computation<Result> SelectMany<TSource, TOther1, TOther2, Result>(
+        public static Computation<TResult> SelectMany<TSource, TOther1, TOther2, TResult>(
             this Computation<TSource> source,
             Func<TSource, Computation<TOther1>> monadFunction1,
             Func<TSource, TOther1, Computation<TOther2>> monadFunction2,
-            Func<TSource, TOther1, TOther2, Result> resultFunction)
+            Func<TSource, TOther1, TOther2, TResult> resultFunction)
         {
             return
                 source

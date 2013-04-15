@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace UnitTestProject1
+namespace CarstenFuehrmann.MonadTests
 {
     [TestClass]
     public class ComputationTests
