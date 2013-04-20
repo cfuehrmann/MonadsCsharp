@@ -53,12 +53,12 @@ namespace CarstenFuehrmann.MonadTests
         [TestMethod]
         public void JustBehavior()
         {
-            var actual = 42.Just();
+            var actual = 42.JustForNullable();
             var expected = new int?(42);
             Assert.AreEqual(expected, actual);
         }
 
-        // The definition of Select and SelectMany in terms of Bind and Just looks the same
+        // The definition of Select and SelectMany in terms of Bind and JustForNullable looks the same
         // for all monads and could be generated automatically. So writing unit tests for 
         // Select and SelectMany seems conceptually wrong. The following tests are just
         // for show.
@@ -114,7 +114,7 @@ namespace CarstenFuehrmann.MonadTests
         // Todo: 
         // - Introduce the MayBe-monad to fix the FromThree-problem
         // - Introduce the possibility of casts between Nullable and MayBe
-        // - Are there methods missing. That is, do Bind and Just cover all
+        // - Are there methods missing. That is, do Bind and JustForNullable cover all
         // - things that one might want to do with an element of MayBe<T>?
         // - Introduce version control
     }

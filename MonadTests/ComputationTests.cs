@@ -102,5 +102,5 @@ namespace CarstenFuehrmann.MonadTests
 
             var result = c.Eval();
         }
-     }
+    }
 }

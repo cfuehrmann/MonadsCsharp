@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NSubstitute">
+      <HintPath>..\packages\NSubstitute.1.5.0.0\lib\NET40\NSubstitute.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -53,12 +56,16 @@
     <Compile Include="NullablteTests.cs" />
     <Compile Include="ComputationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MaybeTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Monads\Monads.csproj">
       <Project>{58215b42-2cb6-4d36-b2cf-b5af2282841f}</Project>
       <Name>Monads</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

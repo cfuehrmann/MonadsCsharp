@@ -13,7 +13,7 @@ namespace CarstenFuehrmann.Monads
             return source.HasValue ? function(source.Value) : null;
         }
 
-        public static Nullable<TSource> Just<TSource>(this TSource source) where TSource : struct
+        public static Nullable<TSource> JustForNullable<TSource>(this TSource source) where TSource : struct
         {
             return source;
         }
@@ -28,7 +28,7 @@ namespace CarstenFuehrmann.Monads
             return
                 source.Bind(sourceValue =>
                 monadFunction(sourceValue).Bind(otherValue =>
-                resultFunction(sourceValue, otherValue).Just()));
+                resultFunction(sourceValue, otherValue).JustForNullable()));
         }
 
         public static TResult? Select<TSource, TResult>
@@ -38,7 +38,7 @@ namespace CarstenFuehrmann.Monads
         {
             return
                 source.Bind(sourceValue =>
-                function(sourceValue).Just());
+                function(sourceValue).JustForNullable());
         }
     }
 }
